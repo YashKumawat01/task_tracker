@@ -1,0 +1,180 @@
+:root{
+  --bg:#020617;
+  --panel:#020617;
+  --card:#0b1220;
+  --border:#1e293b;
+  --accent:#38bdf8;
+  --success:#22c55e;
+  --danger:#ef4444;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:system-ui,-apple-system,sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+}
+
+/* ===== LAYOUT ===== */
+.app{
+  max-width:1280px;
+  margin:auto;
+  padding:24px;
+  display:grid;
+  grid-template-columns:280px 1fr 340px;
+  gap:24px;
+}
+
+/* ===== PANELS ===== */
+.panel{
+  background:linear-gradient(180deg,#020617,#020617);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+}
+
+/* ===== LEFT ===== */
+.clock{
+  font-size:2.2rem;
+  font-weight:700;
+  color:var(--accent);
+  text-align:center;
+}
+.date{
+  text-align:center;
+  color:var(--muted);
+  font-size:0.9rem;
+  margin-bottom:20px;
+}
+.divider{
+  height:1px;
+  background:var(--border);
+  margin:18px 0;
+}
+.streakBox{
+  text-align:center;
+  padding:16px;
+  background:var(--card);
+  border-radius:14px;
+}
+.streakBox strong{
+  font-size:2rem;
+  display:block;
+}
+
+/* ===== CENTER ===== */
+.taskHeader{
+  font-size:1.1rem;
+  font-weight:600;
+  margin-bottom:14px;
+}
+.taskInput{
+  display:flex;
+  gap:12px;
+  margin-bottom:20px;
+}
+.taskInput input{
+  flex:1;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:#020617;
+  color:var(--text);
+}
+.taskInput button{
+  padding:12px 18px;
+  border-radius:12px;
+  border:none;
+  background:var(--accent);
+  font-weight:700;
+  cursor:pointer;
+}
+
+.taskList{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.taskItem{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px 16px;
+  background:var(--card);
+  border-radius:14px;
+  border:1px solid var(--border);
+}
+.taskItem.done{
+  color:var(--success);
+  text-decoration:line-through;
+}
+.taskItem input{
+  width:18px;
+  height:18px;
+}
+.taskItem button{
+  background:none;
+  border:none;
+  color:var(--danger);
+  font-size:1rem;
+  cursor:pointer;
+}
+
+/* ===== RIGHT ===== */
+.sectionTitle{
+  font-size:1rem;
+  font-weight:600;
+  margin-bottom:14px;
+}
+.stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-bottom:22px;
+}
+.stat{
+  background:var(--card);
+  padding:16px;
+  border-radius:14px;
+  text-align:center;
+  border:1px solid var(--border);
+}
+.stat strong{
+  display:block;
+  font-size:1.4rem;
+  margin-top:4px;
+}
+
+.dateInput{
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:#020617;
+  color:var(--text);
+}
+
+.exportBtn{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:none;
+  background:var(--accent);
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1100px){
+  .app{
+    grid-template-columns:1fr;
+  }
+}
